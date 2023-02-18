@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7]
+        python-version: [3.11]
     steps:
       # Checkout this repo and Python Package Template repo for validation testing.
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with: 
           repository: microsoft/python-package-template
           ref: 'main'
@@ -24,7 +24,10 @@ jobs:
           path: pyaction
           clean: true
 
-      - uses: actions/setup-python@v1
+      - name: change project name
+        run: sed -i -e "s/py-project-toml/rockdreamer-pyaction-py-project-toml/" pyproject/pyproject.toml
+
+      - uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
 

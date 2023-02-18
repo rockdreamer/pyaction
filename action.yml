@@ -106,7 +106,7 @@ runs:
       uses: psf/black@stable
       id: action_black
       with:
-        options: "--config ${{ inputs.root }}/${{ inputs.toml }} ${{ inputs.root }}/${{ inputs.workdir }} ${{ inputs.root }}/tests --check --verbose"
+        options: "--config ${{ inputs.root }}/${{ inputs.toml }} ${{ inputs.root }}/${{ inputs.workdir }} ${{ inputs.root }}/tests --check"
 
     - if: ${{ inputs.bandit  == 'true' }}
       uses: dciborow/action-bandit@0.0.2

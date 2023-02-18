@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7]
+        python-version: [3.11]
     steps:
       # Checkout this repo and Python Package Template repo for validation testing.
       - uses: actions/checkout@v3

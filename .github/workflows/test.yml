@@ -27,6 +27,7 @@ jobs:
       - name: change project name
         run: sed -i -e "s/py-project-toml/rockdreamer-pyaction-py-project-toml" pyproject/pyproject.toml
 
+      - uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
 
